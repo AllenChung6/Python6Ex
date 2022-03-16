@@ -1,9 +1,13 @@
 from typing import Iterable, Tuple, List, Union
+
 TicTacToeRow = List[str]
 TicTacToeBoard = Tuple[TicTacToeRow, TicTacToeRow, TicTacToeRow]
 
 
 def tic_tac_toe_finish(board: TicTacToeBoard, pos_y: int, pos_x: int, symbol: str) -> None:
+    board[pos_y][pos_x] = symbol;
+    return None
+
     """
     This function takes in a TicTacToeBoard and applies the finishing move based on the provided parameters pos_y,
     pos_x, and symbol.
@@ -14,10 +18,12 @@ def tic_tac_toe_finish(board: TicTacToeBoard, pos_y: int, pos_x: int, symbol: st
     :param symbol: The symbol that should be placed in the column (X, or O)
     :return: None
     """
-    pass  # remove pass statement and implement me
 
 
 def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
+    num = collection.count(instance)
+    return num
+
     """
     This function counts the number of occurrences of the instance value within the collection parameter.
 
@@ -25,10 +31,16 @@ def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     :param instance: An item in the collection parameter
     :return: An integer.
     """
-    pass  # remove pass statement and implement me
 
 
 def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
+
+    new_list = {indexes[x]: entries[x] for x in range(len(indexes))}
+
+    for x in new_list:
+        print('Index:' + x, 'Entry: ' + new_list[x])
+
+
     """
     This function iterates through the given parameters and prints the items formatted according to the following rules:
     The index of the indexes iterable correspond to the index of the entries iterable.
@@ -38,7 +50,6 @@ def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
     :param entries: A list or tuple
     :return: None
     """
-    pass  # remove pass statement and implement me
 
 
 def print_items_with_index(items: Iterable):
@@ -51,4 +62,3 @@ def print_items_with_index(items: Iterable):
     :return: None
     """
     pass  # remove pass statement and implement me
-
