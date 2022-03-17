@@ -34,12 +34,19 @@ def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
 
 
 def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
+    # for index, entry in str(indexes, entries):
+    #    index1 = str(index)
 
-    new_list = {indexes[x]: entries[x] for x in range(len(indexes))}
+    # new_list = {indexes[x]: entries[x] for x in range(len(indexes))}
 
-    for x in new_list:
-        print('Index:' + x, 'Entry: ' + new_list[x])
+    # for x in new_list:
+    #   print('Index: ' + indexes[x], 'Entry: ' + new_list[x])
 
+    for index, entry in zip(indexes, entries):
+        index1 = str(index)
+        print(f'Index: {index1:10} Entry: {entry}')
+
+    return None
 
     """
     This function iterates through the given parameters and prints the items formatted according to the following rules:
@@ -53,6 +60,11 @@ def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
 
 
 def print_items_with_index(items: Iterable):
+    tuple = items
+    for x in tuple:
+        index = abs(-1 - tuple.index(x))
+        print(str(index) + ": " + x)
+
     """
     This function iterates through the items parameter and prints the item formatted according to the following rules:
     Each item printed received the index 1-N where N is the size of the items parameter.
@@ -61,4 +73,3 @@ def print_items_with_index(items: Iterable):
     :param items: A tuple or a list
     :return: None
     """
-    pass  # remove pass statement and implement me
