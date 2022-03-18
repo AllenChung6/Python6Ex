@@ -62,8 +62,8 @@ def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
 def print_items_with_index(items: Iterable):
     tuple = items
     for x in tuple:
-        index = abs(-1 - tuple.index(x))
-        print(str(index) + ": " + x)
+        index = abs(-1 - tuple.index(x))  #create index for tuple that starts from -1 to -7. Take the absolute valur of index (tests show positive indexes).
+        print(str(index) + ": " + x)       #print out indexes + elements in tuple.
 
     """
     This function iterates through the items parameter and prints the item formatted according to the following rules:
